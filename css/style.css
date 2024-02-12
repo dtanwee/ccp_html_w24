@@ -1,53 +1,79 @@
 body {
-    background: powderblue;
+    background: lightyellow;
     padding: 20px;
 }
 
 h1 {
     font-size: 40px;
-    font-family: Garamond, Helvetica, sans-serif;
+    font-family: Verdana, Helvetica, sans-serif;
     text-align: center;
+    color: brown;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   
   h2 {
     font-size: 30px;
     text-align: center;
-    font-family: Courier, Helvetica, sans-serif;
-    color: blueviolet;
+    font-family: Verdana, Helvetica, sans-serif;
+    color: brown;
+    margin-bottom: 20px;
   }
 
   h3 {
     font-size: 24px;
     text-align: center;
     font-family: Verdana, Helvetica, sans-serif;
-    color: blueviolet;
+    color: brown;
+    margin-bottom: 40px;
   }
 
   h4 {
     font-size: 20px;
+    font-family: Verdana, Helvetica, sans-serif;
   }
   
   p {
     font-size: 14px;
     line-height: 200%;
+    font-family: Helvetica, sans-serif;
   }
 
   img {
-    border: solid 5px black;
-    padding: 10px;
-    margin: 20px;
-    border-top-right-radius: 30px;
+    border: solid 2px rgba(165, 42, 42, 0.2);
+    padding: 2px;
+    margin: 2px;
+    /*border-top-right-radius: 30px;*/
+    border-radius: 10px;
     height: 200px;
   }
 
   .list-item-inline {
     display: inline-block;
-    margin-left: 50px;
+    margin-left: 30px;
+    font-family: Helvetica, sans-serif;
   }
 
   .div-align-horizontal-centered {
-    display: flex;
+    display: grid;
     justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    grid-gap: 20px;
+    /*display: flex;
+    justify-content: center;*/
+  }
+
+  .travel-grid {
+    grid-template-columns: repeat(5, 250px);
+  }
+
+  .recipes-grid {
+    grid-template-columns: repeat(3, 350px);
+  }
+
+  .pets-grid {
+    grid-template-columns: repeat(3, 400px);
   }
 
   .horizontal-spacer {
@@ -66,8 +92,68 @@ h1 {
 
   ol {
     list-style:circle;
+    font-family: Helvetica, sans-serif;
   }
 
   .centered-text {
     text-align: center;
   }
+
+  .currentLink {
+    /*color: darkolivegreen;*/
+    text-decoration: underline;
+    border: 1px solid black;
+ }
+
+ li a:focus, li a:hover {
+  /*color: darkolivegreen;*/
+  text-decoration: underline;
+  border: 1px solid black;
+}
+
+.skipToMain {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;;
+  opacity: 0;
+}
+
+.skipToMain:focus {
+  position: static;
+  /*left: 40px;
+  transform: translateX(-50%);*/
+  opacity: 1;
+}
+
+.italic {
+  font-style: italic;
+}
+
+@media screen and (max-width: 480px) {
+  p {
+    font-size: 20px;
+    line-height: 200%;
+  }
+
+  a {
+    font-size: 20px;
+  }
+
+  .list-item-inline {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .travel-grid {
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  .recipes-grid {
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  .pets-grid {
+    grid-template-columns: repeat(1, 100%);
+  }
+}
